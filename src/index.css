@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  @font-face {
+    font-family: 'Aquire-BW0ox';
+    src: local('Aquire-BW0ox'), url("./fonts/Aquire-BW0ox.otf") format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Spartan-Bold';
+    src: local('Spartan-Bold'), url("./fonts/Spartan/Spartan-Bold.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'Maler';
+    src: local('Maler'), url("./fonts/Maler.ttf") format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Quicksand-SemiBold';
+    src: local('Quicksand-SemiBold'), url("./fonts/Quicksand/Quicksand-SemiBold.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'Quicksand-Bold';
+    src: local('Quicksand-Bold'), url("./fonts/Quicksand/Quicksand-Bold.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'Quicksand-Regular';
+    src: local('Quicksand-Regular'), url("./fonts/Quicksand/Quicksand-Regular.ttf") format('truetype');
+  }

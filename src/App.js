@@ -1,9 +1,8 @@
-import './App.css';
-
-function App() {
+import Login from "./pages/Login/index.js"
+const App = () => {
   return (
-    <div className="App">
-      SongBird
+    <div>
+      <Login/>
     
     </div>
   );
