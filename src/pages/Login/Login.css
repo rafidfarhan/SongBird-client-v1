@@ -21,7 +21,7 @@
   flex: 0.5;
   color: white;
   /* background: linear-gradient(to bottom right,#780206, #061161);  */
-  background-image: url('./bg-music.jpg');
+  background-image: url('../../images/bg-music.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   
@@ -86,11 +86,10 @@ input.input-100{
   background-color:  white;
 }
 .input-100-red{
-  border: 2px solid #a10707;
+  border: 1px solid #a10707;
 }
 
 .button-wrap {
-  width: 90%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -103,7 +102,7 @@ input.input-100{
 .login-form-button{
   outline: none !important;
 	border: none;
-  width: 100%;
+  width: 90%;
   height: 50px;
   border-radius: 3px;
   background: #038b4e;
@@ -119,6 +118,11 @@ input.input-100{
 }
 .login-form-button:hover{
   background: #037743;
+  color: white;
+}
+.login-form-button:focus{
+  background: #037743;
+  border: 1px solid  #b8e4d0;
   color: white;
 }
 .forgot-pass-wrap{
@@ -166,12 +170,15 @@ input.input-100{
 }
 .sign-up-wrap a{
   text-decoration: none;
+}
+
+.sign-up-wrap p{
   transition: all 0.4s;
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
-.sign-up-wrap a:hover{
+.sign-up-wrap p:hover{
   color: white;
 }
 

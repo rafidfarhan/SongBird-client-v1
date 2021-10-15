@@ -1,7 +1,14 @@
-import { useState} from 'react';
+import { useEffect,useState} from 'react';
 import axios from 'axios';
+import {useSelector,useDispatch} from "react-redux"; 
+import {setToken,setUser } from '../../redux/actions';
+import setAxiosHeaders from '../../utils/setAxiosHeaders'
 
-const useForm = (callback, validate) => {
+const useForm = () => {
+
+  const userData = useSelector((state) => state.userData);
+  const dispatch = useDispatch(); 
+
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -21,31 +28,44 @@ const useForm = (callback, validate) => {
       const {data} = await axios.post (`https://songbird-api-v1.herokuapp.com/api/v1/auth/login`,creds);
       console.log(data);
       setCredentialError();
+      dispatch(setToken(data.token));
     }
     catch(err){
       setCredentialError(err.response.data.error);
     }
     
 }
+const fetchUser = async (token) =>{
+  if(token){
+    try{
+      setAxiosHeaders(token)
+      const {data} = await axios.get (`https://songbird-api-v1.herokuapp.com/api/v1/auth/me`);
+      console.log(data);
+      dispatch(setUser(data.data));
+    }
+    catch(err){
+      setCredentialError(err.response.data.error);
+      console.log(err.response.data.error);
+    }
+  }
+  else{
+    return
+  }
+  
+  
+}
 
   const handleSubmit = e => {
     e.preventDefault();
     loginReq(values);
-
-    // if (!values.email) {
-    //   errors.email = 'Enter your email';
-    // } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    //   setErrors({email:'Invalid email address'})
-    // }
-    // if (!values.password) {
-    //   setErrors({password: 'Enter password'})
-    // }
-    // console.log(errors);
-    // if (Object.keys(errors).length === 0) {
-    //   loginReq(values);
-    // }
   };
 
+    useEffect(()=>{
+      fetchUser(userData.token);
+   },[userData.token])
+   
+  
+ 
   // useEffect(
   //   () => {
   //     if (Object.keys(errors).length === 0 && isSubmitting) {

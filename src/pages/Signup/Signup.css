@@ -1,0 +1,118 @@
+.signup{
+    display: flex;
+    flex-direction: column;
+  }
+  .signup-body{
+    display: flex;
+    flex-grow: 1;
+  }
+  .signup-form-wrap{
+    flex: 0.5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    background-color : rgb(20, 20, 20);
+  }
+  .side-banner-2{
+    width: 100%;
+    height: 100vh !important;
+    flex: 0.5;
+    color: white;
+    /* background: linear-gradient(to bottom right,#780206, #061161); */
+    background-image: url('../../images/singer.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    
+    /* ,#780206, #061161
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: rgb(53, 18, 31); */
+  }
+  .signup-form{
+    width: 80%;
+    justify-content: center;
+  }
+  .signup-form-title{
+    font-family: Quicksand-Bold;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  
+  }
+  .input-wrap-2{
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between; */
+    align-items: center;
+  }
+  .input-100-2{
+    outline: none;
+    border: 2px solid rgb(20, 20, 20);
+    width: 95%;
+    font-family: Quicksand;
+    font-size: medium;
+    background-color: #e8f0ec;
+    line-height: 1.2;
+    height: 50px;
+    padding-left: 4%;
+  }
+  .input-100-2:focus{
+    border: 2px solid #038b4e;
+    background-color: white;
+  }
+  .input-100-2-red{
+    border: 1px solid #a10707;
+  }
+
+  .button-wrap {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .signup-form-button{
+    outline: none !important;
+    border: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 3px;
+    background: #038b4e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #b8e4d0;
+    font-family: Quicksand;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .signup-form-button:hover{
+    background: #037743;
+    color: white;
+  }
+  .signup-form-button:focus{
+    background: #037743;
+    border: 1px solid  #b8e4d0;
+    color: white;
+  }
+  .signup-label{
+      display: block;
+      font-family: Quicksand;
+      font-size: small;
+      margin-top: 1%;
+      margin-bottom: 1%;
+  }
+  .m-t-10-percent {margin-top: 6%;}

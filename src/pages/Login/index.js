@@ -5,6 +5,7 @@ import React from 'react';
 import useForm from './useForm';
 import './Login.css';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
+import {Link} from "react-router-dom";
 
 const Login = () => {
 
@@ -57,7 +58,11 @@ const Login = () => {
               <a href="forgotpassword" className="txt2">password?</a>
               </div>
               <div className="sign-up-wrap">
-              <a href="signin" className="txt3">Sign Up</a>
+
+              <Link to = "/signup">
+              <p className="txt3">Sign Up</p>
+              </Link>
+
               </div>
             </form>
           </div>
