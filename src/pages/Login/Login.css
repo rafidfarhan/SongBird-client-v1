@@ -8,19 +8,22 @@
 }
 .login-form-wrap{
   flex: 0.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: 100vh;
   color: white;
   background-color : rgb(20, 20, 20);
 }
 .side-banner{
   width: 100%;
-  height: 100vh;
+  height: 100vh !important;
   flex: 0.5;
   color: white;
   /* background: linear-gradient(to bottom right,#780206, #061161);  */
-  background-image: url('./bg_1.jpg');
+  background-image: url('./bg-music.jpg');
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
   
   /* ,#780206, #061161
   background: linear-gradient(transparent, rgba(0, 0, 0, 1));
@@ -31,7 +34,7 @@
   display: none;
 }
 .login-form{
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -44,8 +47,8 @@
   text-align: center;
   width: 100%;
   display: block;
-  padding-top: 10%;
-  padding-bottom: 5%;
+  margin-top: 10%;
+
 }
 .input-wrap{
   width: 100%;
@@ -63,12 +66,11 @@
 .input-100{
   outline: none;
   border: 2px solid rgb(20, 20, 20);
-  display:block;
   width: 97.5%;
   text-align: center;
   font-family: Quicksand;
   font-size: medium;
-
+  background-color:  #e8f0ec;
   line-height: 1.2;
 }
 input.input-100{
@@ -81,6 +83,10 @@ input.input-100{
 
 .input-100:focus{
   border: 2px solid  #038b4e;
+  background-color:  white;
+}
+.input-100-red{
+  border: 2px solid #a10707;
 }
 
 .button-wrap {
@@ -135,7 +141,7 @@ input.input-100{
 }
 
 .forgot-pass-wrap a:hover {
-  color: rgb(235, 235, 235) ;
+  color:  #038b4e ;
 }
 .txt1 {
   font-size: 13px;
@@ -152,7 +158,8 @@ input.input-100{
 .sign-up-wrap{
   width: 100%;
   text-align: center;
-  margin-top:42vh;
+  margin-top: 30%;
+  margin-bottom: 5%;
   text-transform: uppercase;
   letter-spacing: 1px;
  
@@ -176,6 +183,27 @@ input.input-100{
   text-transform: uppercase;
   
 }
+.txt4-wrap{
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+.txt4 {
+  font-family: Quicksand;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #c00707;
+}
+.txt4-icon {
+  font-size: 13px;
+  color: #c00707;
+  margin-right: 2%;
+ 
+}
+
+
 .m-b-20 {margin-bottom: 20px;}
 /* .p-b-34 {padding-bottom: 34px;}
 
