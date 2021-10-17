@@ -33,13 +33,15 @@
   .signup-form{
     width: 80%;
     justify-content: center;
+   
   }
   .signup-form-title{
     font-family: Quicksand-Bold;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 2px;
-    text-align: center;
+    /* text-align: center; */
+    text-transform: uppercase;
     width: 100%;
     display: block;
     margin-top: 5%;
@@ -60,7 +62,7 @@
     font-size: medium;
     background-color: #e8f0ec;
     line-height: 1.2;
-    height: 50px;
+    height: 45px;
     padding-left: 4%;
   }
   .input-100-2:focus{
@@ -83,6 +85,7 @@
   }
   
   .signup-form-button{
+    margin-bottom: 3%;
     outline: none !important;
     border: none;
     width: 100%;
@@ -109,10 +112,29 @@
     color: white;
   }
   .signup-label{
+      color: rgb(202, 202, 202);
       display: block;
-      font-family: Quicksand;
+      font-family: Quicksand-SemiBold;
       font-size: small;
       margin-top: 1%;
       margin-bottom: 1%;
+  }
+  .errors-wrap{
+    display: flex;
+    align-items: center;
+    margin-top:1%;
+    margin-bottom: 1%;
+  }
+  .errors{
+    font-family: Quicksand;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #c00707;
+  }
+  .errors-icon {
+    font-size: 20px !important ;
+    color: #c00707;
+    margin-right: 1%;
+   
   }
   .m-t-10-percent {margin-top: 6%;}

@@ -1,10 +1,10 @@
 import { useEffect,useState} from 'react';
 import axios from 'axios';
 import {useSelector,useDispatch} from "react-redux"; 
-import {setToken,setUser } from '../../redux/actions';
-import setAxiosHeaders from '../../utils/setAxiosHeaders'
+import {setToken,setUser } from '../redux/actions';
+import setAxiosHeaders from '../utils/setAxiosHeaders'
 
-const useForm = () => {
+const useLogin = () => {
 
   const userData = useSelector((state) => state.userData);
   const dispatch = useDispatch(); 
@@ -78,4 +78,4 @@ const fetchUser = async (token) =>{
   return { handleChange, handleSubmit, values, credentialError };
 };
 
-export default useForm;
+export default useLogin;

@@ -2,20 +2,22 @@ import React from 'react';
 
 // import SideBanner from '../../components/SideBanner/SideBanner'
 // import LoginForm from '../../components/LoginForm'
-import useForm from './useForm';
+import useLogin from '../../config/useLogin';
 import './Login.css';
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
 import {Link} from "react-router-dom";
 
 const Login = () => {
 
-    const { handleChange, handleSubmit, values, credentialError } = useForm();
+    const { handleChange, handleSubmit, values, credentialError } = useLogin();
   
   
     return (
       <div className = 'login'>
         <div className= "login-body">
+        <div className = 'top-banner'></div>
           <div  className = "login-form-wrap">
+            
           <span className="login-form-title">Login to Songbird</span>
             <form className = 'login-form' onSubmit = {handleSubmit}>
 

@@ -1,13 +1,21 @@
 import React from 'react';
+import validate from '../../config/signupValidateInfo';
+import useSignup from '../../config/useSignup';
+import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
+
 import './Signup.css';
 
 const Signup = () => {
+    const { handleChange, handleSubmit, values, errors } = useSignup(
+        validate
+      );
+
     return (
         <div className = 'signup'>
              <div className= "signup-body">
                 <div  className = "signup-form-wrap">
                 
-                <form className = 'signup-form'>
+                <form  onSubmit = {handleSubmit} className = 'signup-form'>
                 <span className="signup-form-title">Create an Account</span>
                     <div className='input-wrap-2'>
                         <label className='signup-label'>Username</label>
@@ -16,9 +24,15 @@ const Signup = () => {
                             type='text'
                             name='username'
                             placeholder='Enter your username'
-                            // value={values.username}
-                            // onChange={handleChange}
+                            value={values.username}
+                            onChange={handleChange}
                         />
+                        {errors.username && <div className = 'errors-wrap'>
+                            <ErrorOutlineRoundedIcon 
+                            className = 'errors-icon'
+                            />
+                            <span className = 'errors'>{errors.username}</span>
+                            </div>}
                     </div>
                     <div className='input-wrap-2'>
                         <label className='signup-label'>Email</label>
@@ -27,9 +41,15 @@ const Signup = () => {
                             type='email'
                             name='email'
                             placeholder='Enter your email'
-                            // value={values.username}
-                            // onChange={handleChange}
+                            value={values.email}
+                            onChange={handleChange}
                         />
+                        {errors.email && <div className = 'errors-wrap'>
+                            <ErrorOutlineRoundedIcon 
+                            className = 'errors-icon'
+                            />
+                            <span className = 'errors'>{errors.email}</span>
+                            </div>}
                     </div>
                     <div className='input-wrap-2'>
                         <label className='signup-label'>Password</label>
@@ -38,9 +58,15 @@ const Signup = () => {
                             type='password'
                             name='password'
                             placeholder='Enter your password'
-                            // value={values.password}
-                            // onChange={handleChange}
+                            value={values.password}
+                            onChange={handleChange}
                         />
+                        {errors.password && <div className = 'errors-wrap'>
+                            <ErrorOutlineRoundedIcon 
+                            className = 'errors-icon'
+                            />
+                            <span className = 'errors'>{errors.password}</span>
+                            </div>}
                     </div>
                     <div className='input-wrap-2'>
                         <label className='signup-label'>Confirm Password</label>
@@ -49,9 +75,15 @@ const Signup = () => {
                             type='password'
                             name='password2'
                             placeholder='Confirm your password'
-                            // value={values.password2}
-                            // onChange={handleChange}
+                            value={values.password2}
+                            onChange={handleChange}
                         />
+                         {errors.password2 && <div className = 'errors-wrap'>
+                            <ErrorOutlineRoundedIcon 
+                            className = 'errors-icon'
+                            />
+                            <span className = 'errors'>{errors.password2}</span>
+                             </div>}
                     </div>
                     <div className = 'm-t-10-percent button-wrap'>
                         <button className ="signup-form-button" type = 'submit'>Sign up</button>
