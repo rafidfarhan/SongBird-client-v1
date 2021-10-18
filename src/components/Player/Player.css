@@ -8,11 +8,13 @@
     width: 100%;
     /* border-top: 2px solid white; */
     background-color: rgba(218, 216, 216, 1);
-    /* background-color: rgba(255, 255, 255, 0.4); */
+    /* background-color: rgba(255, 255, 255, 0.4); 
+    #038b4e  #037743
+    */
   }
   
   .player-right * .MuiSlider-root {
-    color: green;
+    color: #038b4e;
   }
   .player-left {
     display: flex;
@@ -23,7 +25,7 @@
   }
   
   .player-green {
-    color: #1ed15e;
+    color: #037743;
   }
   
   .player-center {
@@ -47,12 +49,12 @@
   
   }
   
-  .footer__player:hover{
+  .player-player:hover{
     transition: transform 0.2s ease-in-out;
     transform: scale(1.2) !important;
   }
   
-  .footer__right {
+  .player-right {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,6 +73,6 @@
     margin-bottom: 5px;
   }
   
-  .footer__songInfo > p {
+  .player__songInfo > p {
     font-size: 12px;
   }

@@ -4,7 +4,7 @@
     height: 100vh;
     overflow-y: overlay;
     flex: 0.9;
-    color: black !important;
+    color: white;
     background: linear-gradient(to bottom right,#780206, #061161);
     /* background-image: url('../../Images/VioletSmall.jpg');
     background-size: cover;
