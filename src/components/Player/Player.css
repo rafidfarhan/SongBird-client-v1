@@ -1,0 +1,76 @@
+.player {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    padding: 16px;
+    height: 90px;
+    width: 100%;
+    /* border-top: 2px solid white; */
+    background-color: rgba(218, 216, 216, 1);
+    /* background-color: rgba(255, 255, 255, 0.4); */
+  }
+  
+  .player-right * .MuiSlider-root {
+    color: green;
+  }
+  .player-left {
+    display: flex;
+    align-items: center;
+    color: black;
+    width: 300px;
+    flex: 0.3;
+  }
+  
+  .player-green {
+    color: #1ed15e;
+  }
+  
+  .player-center {
+    flex: 0.4;
+    max-width: 180px;
+    /* padding: 0 100px; */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .player-player{
+    font-size: 40px !important;
+  
+  }
+  .player-skip{
+    font-size: 26px !important;
+    margin-left:6px;
+    margin-right:6px;
+  
+  }
+  
+  .footer__player:hover{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1.2) !important;
+  }
+  
+  .footer__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    flex: 0.3;
+  }
+  
+  .player-album-logo {
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    object-fit: contain;
+  }
+  
+  .player-song-info > h4 {
+    margin-bottom: 5px;
+  }
+  
+  .footer__songInfo > p {
+    font-size: 12px;
+  }

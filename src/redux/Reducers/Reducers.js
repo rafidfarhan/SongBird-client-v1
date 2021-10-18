@@ -5,7 +5,7 @@ const initialState = {
     // spotify: null,
     // playing: false,
     // item: null,
-    token : null,//"BQBTyZxWVW3NKFgxP3JoZCnRNAGKj3NPOWcdY1VbPFKv4ffsMAyUkWenIIiqNNgv5E443Y9rq-175KxR7hohmP3I0doixgSy1bRMJ9U8RnTx8PFEXiZda2-dZSsqQi2A3ZohYuRCoRlpreYn9YwpMQ2uvTrLdb3s-7gZkS1SwhXB0cZl",
+    token : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNTcxMmI1YTczM2I2ODA1MWVkMTJmZCIsImlhdCI6MTYzNDU0MzM0MywiZXhwIjoxNjM3MTM1MzQzfQ.eEjyTfJLt1jNSRHznZXrJGfJ6EFfyziRQIBhrivRZr0',
     
 }
 

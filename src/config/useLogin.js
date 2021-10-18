@@ -40,6 +40,7 @@ const fetchUser = async (token) =>{
     try{
       setAxiosHeaders(token)
       const {data} = await axios.get (`https://songbird-api-v1.herokuapp.com/api/v1/auth/me`);
+      //window.history.pushState({},null,"/home")
       console.log(data);
       dispatch(setUser(data.data));
     }
@@ -64,16 +65,6 @@ const fetchUser = async (token) =>{
       fetchUser(userData.token);
    },[userData.token])
    
-  
- 
-  // useEffect(
-  //   () => {
-  //     if (Object.keys(errors).length === 0 && isSubmitting) {
-  //       callback();
-  //     }
-  //   },
-  //   [errors]
-  // );
 
   return { handleChange, handleSubmit, values, credentialError };
 };
