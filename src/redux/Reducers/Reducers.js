@@ -31,3 +31,13 @@ export const featuredPlaylistReducer = (state = {}, {type, payload}) =>{
             return state;
     }
 }
+
+export const newReleasesReducer = (state = {}, {type, payload}) =>{
+    switch (type) {
+        case ActionTypes.SET_NEW_RELEASES:
+            return {...state, payload };
+    
+        default:
+            return state;
+    }
+}

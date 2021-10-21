@@ -25,3 +25,10 @@ export const setFeaturedPlaylist = (playlist) =>{
         payload: playlist,
     };
 };
+
+export const setNewReleases = (songs) =>{
+    return {
+        type: ActionTypes.SET_NEW_RELEASES,
+        payload: songs,
+    };
+};

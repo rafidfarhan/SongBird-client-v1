@@ -30,7 +30,7 @@ const Main = () => {
                 <Route path ='/likedSongs' component = {LikedSongs}></Route>
                 <Route path="/track/:trackId" component={ProductDetails} /> */}
             </Switch>
-            <Player/>
+            {/* <Player/> */}
             </Router>
 
 

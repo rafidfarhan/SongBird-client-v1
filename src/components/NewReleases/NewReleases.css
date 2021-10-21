@@ -1,0 +1,18 @@
+.new-releases-wrap{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.new-releases{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
+.new-releases::-webkit-scrollbar {
+    display: none;
+  }
+
+h3{
+    font-family:Maler;
+}
