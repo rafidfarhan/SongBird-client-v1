@@ -1,9 +1,11 @@
 import {combineReducers} from "redux";
 import {
-    userReducer
+    userReducer,
+    featuredPlaylistReducer, 
 } from "./Reducers";
 
 const reducers = combineReducers({
-    userData : userReducer
+    userData : userReducer,
+    featuredPlaylists: featuredPlaylistReducer, 
 });
 export default reducers;

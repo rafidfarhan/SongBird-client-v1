@@ -5,10 +5,10 @@
     overflow-y: overlay;
     flex: 0.9;
     color: white;
-    background: linear-gradient(to bottom right,#780206, #061161);
-    /* background-image: url('../../Images/VioletSmall.jpg');
+    /* background: linear-gradient(to bottom right,#780206, #061161); */
+    background-image: url('../../images/Moon.jpg');
     background-size: cover;
-    background-position: center; */
+    background-position: center;
     
     /* ,#780206, #061161
     background: linear-gradient(transparent, rgba(0, 0, 0, 1));

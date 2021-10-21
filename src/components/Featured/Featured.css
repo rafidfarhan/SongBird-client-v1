@@ -1,0 +1,17 @@
+.featuredPlaylist{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ply{
+    
+    width: 100%;
+  }
+  .feat_full{
+    font-family: Quicksand-Bold;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 100%;
+  }
+  .feat_full h3{
+    font-family: Maler;
+  }

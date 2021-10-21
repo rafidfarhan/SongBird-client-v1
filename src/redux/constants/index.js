@@ -1,4 +1,5 @@
 export const ActionTypes = {
     SET_USER : "SET_USER",
     SET_TOKEN : "SET_TOKEN",
+    SET_FEATURED_PLAYLISTS: "SET_FEATURED_PLAYLISTS",
 };

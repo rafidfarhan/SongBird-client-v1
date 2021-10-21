@@ -18,3 +18,10 @@ export const setToken = (token) =>{
         
     };
 };
+
+export const setFeaturedPlaylist = (playlist) =>{
+    return {
+        type: ActionTypes.SET_FEATURED_PLAYLISTS,
+        payload: playlist,
+    };
+};

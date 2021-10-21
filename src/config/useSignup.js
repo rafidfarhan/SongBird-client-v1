@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useEffect,useState} from 'react';
 import axios from 'axios';
 
 const useSignup = (validate) => {
@@ -10,6 +10,7 @@ const useSignup = (validate) => {
   });
   const [errors, setErrors] = useState({});
   const [apiError, setApiError] = useState();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [signupSuccess, setSignupSuccess] = useState(false);
 
   const handleChange = e => {
@@ -22,13 +23,24 @@ const useSignup = (validate) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     setErrors(validate(values));
-    signupReq(values);
+    setIsSubmitting(true);
+    
   };
+  useEffect(
+        () => {
+          if (Object.keys(errors).length === 0 && isSubmitting) {
+            signupReq(values);
+            console.log(Object.keys(errors).length);
+          }
+        },
+        [errors,values,isSubmitting]
+      );
+
 
   const signupReq = async (values) =>{
-    if (Object.keys(errors).length !== 0){
+    
+    // if (Object.keys(errors).length === 0){
       try{
         const {data} = await axios.post(`https://songbird-api-v1.herokuapp.com/api/v1/auth/register`,{
           username: values.username,
@@ -37,8 +49,8 @@ const useSignup = (validate) => {
         });
         console.log(data);
         setApiError();
-        setErrors({});
         setSignupSuccess(true);
+        setIsSubmitting(false);
       }
       catch(err){
        
@@ -54,12 +66,13 @@ const useSignup = (validate) => {
           setApiError('Server Error.');
         }
         setSignupSuccess(false);
+        setIsSubmitting(false);
       }
       
-    }
-    else{
-      return
-    }
+    // }
+    // else{
+    //   return
+    // }
 }
 //   useEffect(
 //     () => {
