@@ -1,8 +1,9 @@
 import React from 'react'
+import './MyLibrary.css'
 
 const MyLibrary = () => {
     return (
-        <div>
+        <div className ='lib_body'>
             Library Stuffs
         </div>
     )

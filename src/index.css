@@ -6,6 +6,22 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  body::-webkit-scrollbar {
+    width: 10px;
+
+  }
+  body::-webkit-scrollbar-track {
+    border: 1px solid  rgba(112, 110, 110, 0.6);
+    background:  rgba(112, 110, 110, 0.4);
+    
+    box-shadow: inset 0 0 2.5px 2px rgba (0,0,0,0.5) ;
+  }
+  body::-webkit-scrollbar-thumb {
+    /* background: linear-gradient(45deg,#06aeb1,#037743); */
+    background: rgb(20, 20, 20);
+    border-radius: 9px;
+
+  }
   a{
     text-decoration: none !important;
   }
@@ -15,11 +31,11 @@ body {
       monospace;
   }
   
-  @font-face {
+  /* @font-face {
     font-family: 'Aquire-BW0ox';
     src: local('Aquire-BW0ox'), url("./fonts/Aquire-BW0ox.otf") format('truetype');
   }
-  
+   */
   @font-face {
     font-family: 'Spartan-Bold';
     src: local('Spartan-Bold'), url("./fonts/Spartan/Spartan-Bold.ttf") format('truetype');
@@ -40,4 +56,16 @@ body {
   @font-face {
     font-family: 'Quicksand-Regular';
     src: local('Quicksand-Regular'), url("./fonts/Quicksand/Quicksand-Regular.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'Quicksand-Light';
+    src: local('Quicksand-Light'), url("./fonts/Quicksand/Quicksand-Light.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat-Bold';
+    src: local('Montserrat-Bold'), url("./fonts/Montserrat-Bold.ttf") format('truetype');
+  }
+  @font-face {
+    font-family: 'HunterRiver';
+    src: local('HunterRiver'), url("./fonts/HunterRiver-Regular.otf");
   }
