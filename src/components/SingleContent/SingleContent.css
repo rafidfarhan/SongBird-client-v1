@@ -1,10 +1,9 @@
 .content-card{
-    
-    width : 200px;
     background: rgba(180, 176, 176, 0.3);
     border-radius: 4px;
     padding: 20px;
     margin: 1%;
+
 }
 
 .image-wrap{

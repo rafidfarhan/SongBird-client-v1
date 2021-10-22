@@ -41,3 +41,13 @@ export const newReleasesReducer = (state = {}, {type, payload}) =>{
             return state;
     }
 }
+
+export const timelineAlbumsReducer = (state = {}, {type, payload}) =>{
+    switch (type) {
+        case ActionTypes.SET_TIMELINE_ALBUMS:
+            return {...state, payload };
+    
+        default:
+            return state;
+    }
+}

@@ -26,9 +26,16 @@ export const setFeaturedPlaylist = (playlist) =>{
     };
 };
 
-export const setNewReleases = (songs) =>{
+export const setNewReleases = (albums) =>{
     return {
         type: ActionTypes.SET_NEW_RELEASES,
-        payload: songs,
+        payload: albums,
+    };
+};
+
+export const setTimelineAlbums = (albums) =>{
+    return {
+        type: ActionTypes.SET_TIMELINE_ALBUMS,
+        payload: albums,
     };
 };

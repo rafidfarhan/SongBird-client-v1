@@ -3,12 +3,12 @@ import SingleRelease from '../SingleContent';
 import "./NewReleases.css"
 import {CircularProgress} from "@material-ui/core";
 
-const NewReleases = ({album_list}) => {
+const NewReleases = ({fetched_data}) => {
     return (
 
         <div className = 'new-releases-wrap' style = {{marginTop: "5%"}}>
 
-            {!album_list? (
+            {!fetched_data? (
                     <div style = {{height: "50vh", textAlign: "center"}}>
                     <CircularProgress/>
                 </div>
@@ -17,7 +17,7 @@ const NewReleases = ({album_list}) => {
                         <h3 style = {{marginBottom: "1.5%"}}>New Releases</h3>
                         
                         <div className ="new-releases">
-                            {album_list?.data?.map(
+                            {fetched_data?.data?.map(
                                 album =>(
                                     <SingleRelease name = {album.title.split(' ').slice(0,4).join(' ')} 
                                     image = {album.albumArtUrl} 

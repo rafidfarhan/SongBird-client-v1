@@ -1,9 +1,10 @@
 import React from 'react';
 import "./SingleContent.css";
 
-const SingleContent = ({name,image,sub}) => {
+const SingleContent = ({name,image,sub,sub2}) => {
     let subtitle = "Artist";
     if(sub) subtitle = sub[0].name;
+    if(sub2) subtitle = sub2;
     // let x="";
     // if(sub) {
     //     for (let i=0; i< sub.length; i++){
@@ -18,11 +19,11 @@ const SingleContent = ({name,image,sub}) => {
         
         <div className = "content-card">
             <div className = "image-wrap">
-                <img src = {image} alt = "Artist of Album image"/>
+                <img src = {image} alt = {`${name} cover`}/>
             </div>
             
             <h6>{name}</h6>
-            {sub?(<p>{subtitle}</p>):(<p>Artist</p>)}
+            <p>{subtitle}</p>
         </div>
         
     )

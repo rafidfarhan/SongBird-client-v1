@@ -57,7 +57,10 @@ const Login = () => {
                 </div>}
               <div className = 'forgot-pass-wrap'>
               <span className="txt1">Forgot  </span>
-              <a href="forgotpassword" className="txt2">password?</a>
+
+              <Link to = "/forgotpassword">
+              <span className="txt2">password?</span>
+              </Link>
               </div>
               <div className="sign-up-wrap">
 
