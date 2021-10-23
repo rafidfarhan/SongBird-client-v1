@@ -9,7 +9,7 @@ const Banner = ({image,type,name,since,member_text}) => {
     
     return (
             <div className="banner-info">
-                <img src= {`https://songbird-api-v1.herokuapp.com/profilepics/${image}`} alt="Display Image" />
+                <img src= {`https://songbird-api-v1.herokuapp.com/profilepics/${image}`} alt="user" />
                 <div className="banner-info-text">
                 {/* <strong>{type}</strong> */}
                 <h2>{name}</h2>

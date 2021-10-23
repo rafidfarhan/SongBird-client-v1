@@ -1,5 +1,6 @@
 import { useEffect,useState} from 'react';
 import axios from 'axios';
+import {api_base_url} from './constants'
 
 const useSignup = (validate) => {
   const [values, setValues] = useState({
@@ -42,7 +43,7 @@ const useSignup = (validate) => {
     
     // if (Object.keys(errors).length === 0){
       try{
-        const {data} = await axios.post(`https://songbird-api-v1.herokuapp.com/api/v1/auth/register`,{
+        const {data} = await axios.post(`${api_base_url}/auth/register`,{
           username: values.username,
           email: values.email,
           password: values.password

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import axios from 'axios';
 import { useSelector,useDispatch } from 'react-redux';
 import setAxiosHeaders from '../../utils/setAxiosHeaders'; 
+import {api_base_url} from '../../config/constants'
 
 import Header from '../../components/Header';
 import Featured from '../../components/Featured';
@@ -23,7 +24,7 @@ const Home = () => {
 
     const getNewReleases = async () =>{
         try{
-          const {data} = await axios.get(`https://songbird-api-v1.herokuapp.com/api/v1/albums?sort=-releaseDate&limit=8`);
+          const {data} = await axios.get(`${api_base_url}/albums?sort=-releaseDate&limit=8`);
           dispatch(setNewReleases(data));
         }
         catch(err){
@@ -33,7 +34,7 @@ const Home = () => {
     }
     const getTimelineAlbums = async () =>{
       try{
-        const {data} = await axios.get(`https://songbird-api-v1.herokuapp.com/api/v1/albums/timeline`);
+        const {data} = await axios.get(`${api_base_url}/albums/timeline`);
         dispatch(setTimelineAlbums(data));
       }
       catch(err){

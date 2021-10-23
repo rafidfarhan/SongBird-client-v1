@@ -3,7 +3,8 @@ import {
     userReducer,
     featuredPlaylistReducer,
     newReleasesReducer,
-    timelineAlbumsReducer
+    timelineAlbumsReducer,
+    ownedPlaylistsReducer
 } from "./Reducers";
 
 const reducers = combineReducers({
@@ -11,5 +12,6 @@ const reducers = combineReducers({
     featuredPlaylists: featuredPlaylistReducer,
     newReleases : newReleasesReducer, 
     timelineAlbums :timelineAlbumsReducer,
+    userOwnedPlaylists :ownedPlaylistsReducer,
 });
 export default reducers;

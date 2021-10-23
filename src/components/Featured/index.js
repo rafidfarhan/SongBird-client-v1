@@ -6,6 +6,7 @@ import SingleFeatPlaylist from '../SingleFeatPlaylist';
 import './Featured.css';
 import {setFeaturedPlaylist} from "../../redux/actions" 
 import {CircularProgress} from "@material-ui/core";
+import {api_base_url} from'../../config/constants'
 
 const Featured = () => {
 
@@ -16,7 +17,7 @@ const Featured = () => {
 
     const getFeaturedPlaylists = async () =>{
         try{
-          const {data} = await axios.get(`https://songbird-api-v1.herokuapp.com/api/v1/playlists/featured`);
+          const {data} = await axios.get(`${api_base_url}/playlists/featured`);
           dispatch(setFeaturedPlaylist(data));
         }
         catch(err){

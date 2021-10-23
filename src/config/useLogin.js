@@ -2,7 +2,8 @@ import { useEffect,useState} from 'react';
 import axios from 'axios';
 import {useSelector,useDispatch} from "react-redux"; 
 import {setToken,setUser } from '../redux/actions';
-import setAxiosHeaders from '../utils/setAxiosHeaders'
+import setAxiosHeaders from '../utils/setAxiosHeaders';
+import {api_base_url} from './constants'
 
 const useLogin = () => {
 
@@ -25,7 +26,7 @@ const useLogin = () => {
 
   const loginReq = async (creds) =>{
     try{
-      const {data} = await axios.post (`https://songbird-api-v1.herokuapp.com/api/v1/auth/login`,creds);
+      const {data} = await axios.post (`${api_base_url}/auth/login`,creds);
       console.log(data);
       setCredentialError();
       dispatch(setToken(data.token));
@@ -39,7 +40,7 @@ const fetchUser = async (token) =>{
   if(token){
     try{
       setAxiosHeaders(token)
-      const {data} = await axios.get (`https://songbird-api-v1.herokuapp.com/api/v1/auth/me`);
+      const {data} = await axios.get (`${api_base_url}/auth/me`);
       //window.history.pushState({},null,"/home")
       console.log(data);
       dispatch(setUser(data.data));

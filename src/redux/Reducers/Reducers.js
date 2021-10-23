@@ -51,3 +51,13 @@ export const timelineAlbumsReducer = (state = {}, {type, payload}) =>{
             return state;
     }
 }
+
+export const ownedPlaylistsReducer = (state = {}, {type, payload}) =>{
+    switch (type) {
+        case ActionTypes.SET_USER_OWNED_PLAYLISTS:
+            return {...state, payload};
+    
+        default:
+            return state;
+    }
+}

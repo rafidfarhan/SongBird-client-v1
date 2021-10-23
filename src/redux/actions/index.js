@@ -39,3 +39,10 @@ export const setTimelineAlbums = (albums) =>{
         payload: albums,
     };
 };
+
+export const setMyPlaylists = (playlist) =>{
+    return {
+        type: ActionTypes.SET_USER_OWNED_PLAYLISTS,
+        payload: playlist,
+    };
+};
