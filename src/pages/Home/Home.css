@@ -7,11 +7,15 @@
     flex: 0.9;
     color: white;
     /* background: linear-gradient(to bottom right,#780206, #061161); */
-    background-image: url('../../images/Moon.jpg');
+    background-image: 
+    /* linear-gradient(to bottom, rgba(6, 174, 177, 0.52), rgba(117, 19, 93, 0)), */
+    url('../../images/Moon.jpg');
     background-size: cover;
     background-position: center;
     
-    /* ,#780206, #061161
+    
+    /* ,#780206, #061161 #06aeb1,#037743
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
     background: linear-gradient(transparent, rgba(0, 0, 0, 1));
     background-color: rgb(53, 18, 31); */
   }

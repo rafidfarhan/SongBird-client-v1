@@ -3,15 +3,19 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 
-import Header from '../../components/Header'
+import Header from '../../components/Header';
+import Banner from '../../components/Banner'
 import { removeSelectedAlbum, setSelectedAlbum } from '../../redux/actions';
 import setAxiosHeaders from '../../utils/setAxiosHeaders'; 
 import {api_base_url} from '../../config/constants'
+
+import AlbumIcon from '@mui/icons-material/Album';
 
 
 const AlbumDetailed = () => {
 
     const currentState = useSelector((state) => state);
+    const selectedAlbum = useSelector((state) => state.selectedAlbum);
     const dispatch = useDispatch();
     const {albumId} = useParams();
 
@@ -38,7 +42,15 @@ const AlbumDetailed = () => {
     return (
         <div className= "home-body">
             <Header/>
-            {albumId}
+            <Banner type ="album"
+            album_art_url={selectedAlbum?.data?.albumArtUrl}
+            album_title={selectedAlbum?.data?.title}
+            artist_name={selectedAlbum?.data?.artists[0].name}
+            artist_image_url= {selectedAlbum?.data?.artists[0].profileImgUrl}
+            release_date = {selectedAlbum?.data?.releaseDate}
+            song_count = {selectedAlbum?.data?.tracks?.length}
+            />
+            <AlbumIcon/>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { useSelector,useDispatch} from 'react-redux';
 import axios from 'axios';
 
 import Header from '../../components/Header';
-import Banner from '../../components/ProfileBanner'
+import Banner from '../../components/Banner'
 
 import {api_base_url} from '../../config/constants'
 import setAxiosHeaders from '../../utils/setAxiosHeaders'
@@ -36,11 +36,10 @@ const MyProfile = () => {
         <div className = "profile-body">
         <Header/>
         <Banner 
-        image = {userData.user?.profilePicture}
-        type = "PROFILE"
-        name = {userData.user?.username}
-        member_text = "Member since "
-        since = {userData.user?.createdAt}
+        profile_image = {userData.user?.profilePicture}
+        type = "profile"
+        username = {userData.user?.username}
+        member_since = {userData.user?.createdAt}
        
         />
         {/* <MyArtists/> */}
