@@ -9,6 +9,7 @@ import MyLibrary from '../../pages/MyLibrary';
 import MyProfile from '../../pages/MyProfile';
 import Search from '../../pages/Search';
 import LikedSongs from '../../pages/LikedSongs';
+import AlbumDetailed from '../../pages/AlbumDetailed';
 
 import './Main.css';
 
@@ -24,6 +25,7 @@ const Main = () => {
                 <Route path ='/library'><MyLibrary/></Route>
                 <Route path ='/profile'><MyProfile/></Route>
                 <Route path ='/search'><Search/></Route>
+                <Route path="/album/:albumId" component={AlbumDetailed} />
                 <Route path ='/likedsongs'><LikedSongs/></Route>
                 {/*
                 <Route path ='/search' component = {SearchPage}></Route>

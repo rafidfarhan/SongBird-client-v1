@@ -22,6 +22,7 @@ const NewReleases = ({fetched_data}) => {
                                     <SingleRelease name = {album.title.split(' ').slice(0,4).join(' ')} 
                                     image = {album.albumArtUrl} 
                                     sub = {album.artists}
+                                    id = {album._id}
                                     key= {album._id}/>
                                 )
                             )}

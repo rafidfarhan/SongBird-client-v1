@@ -4,6 +4,13 @@
     padding: 20px;
     margin: 1%;
     max-width:200px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.content-card:hover{
+    background: rgba(216, 211, 211, 0.3);
 }
 
 .image-wrap{

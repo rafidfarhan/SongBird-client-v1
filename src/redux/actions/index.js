@@ -40,6 +40,18 @@ export const setTimelineAlbums = (albums) =>{
     };
 };
 
+export const setSelectedAlbum = (product) => {
+    return {
+      type: ActionTypes.SET_SELECTED_ALBUM,
+      payload: product,
+    };
+  };
+  export const removeSelectedAlbum = () => {
+    return {
+      type: ActionTypes.REMOVE_SELECTED_ALBUM,
+    };
+  };
+
 export const setMyPlaylists = (playlist) =>{
     return {
         type: ActionTypes.SET_USER_OWNED_PLAYLISTS,

@@ -52,6 +52,17 @@ export const timelineAlbumsReducer = (state = {}, {type, payload}) =>{
     }
 }
 
+export const selectedAlbumReducer = (state = {}, { type, payload }) => {
+    switch (type) {
+      case ActionTypes.SET_SELECTED_ALBUM:
+        return { ...state, ...payload };
+      case ActionTypes.REMOVE_SELECTED_ALBUM:
+        return {};
+      default:
+        return state;
+    }
+  };
+
 export const ownedPlaylistsReducer = (state = {}, {type, payload}) =>{
     switch (type) {
         case ActionTypes.SET_USER_OWNED_PLAYLISTS:
