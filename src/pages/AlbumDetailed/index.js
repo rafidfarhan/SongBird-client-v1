@@ -4,12 +4,18 @@ import {useParams} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 
 import Header from '../../components/Header';
-import Banner from '../../components/Banner'
+import Banner from '../../components/Banner';
+import SongList from '../../components/SongList';
 import { removeSelectedAlbum, setSelectedAlbum } from '../../redux/actions';
 import setAxiosHeaders from '../../utils/setAxiosHeaders'; 
 import {api_base_url} from '../../config/constants'
 
-import AlbumIcon from '@mui/icons-material/Album';
+
+import AlbumTwoToneIcon from '@mui/icons-material/AlbumTwoTone';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+
+import './AlbumDetailed.css'
 
 
 const AlbumDetailed = () => {
@@ -50,7 +56,15 @@ const AlbumDetailed = () => {
             release_date = {selectedAlbum?.data?.releaseDate}
             song_count = {selectedAlbum?.data?.tracks?.length}
             />
-            <AlbumIcon/>
+            <div className = 'album-icons-wrap'>
+            <AlbumTwoToneIcon className= 'album-icon'/>
+            <FavoriteRoundedIcon className= 'album-heart-icon'/>
+            <MoreHorizRoundedIcon className= 'album-more-icon'/>
+            </div>
+            <SongList tracks = {selectedAlbum?.data?.tracks} album_title = {selectedAlbum?.data?.title}
+            artist_name = {selectedAlbum?.data?.artists?.map((artist) => artist.name).join(", ")}
+            />
+           
         </div>
     )
 }

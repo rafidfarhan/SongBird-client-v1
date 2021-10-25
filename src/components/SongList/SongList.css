@@ -1,0 +1,73 @@
+.tracks-wrap{
+    margin-left: 3%;
+}
+.headingsRow {
+    /* padding-top: 1%;
+    padding-bottom: 1%; */
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    margin-bottom: 2%;
+    border-radius: 1px;
+    border-bottom: 2px solid #cccccc;
+  }
+  .headingsRow_info_all{
+    width: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between !important;
+  }
+  /* .play{
+    margin-right:1%;
+    margin-left:2%;
+    visibility: hidden;
+  } */
+  
+  /* .headingsRow:hover {
+    cursor: pointer;
+    background: rgba(206, 201, 201, 0.3);
+    transition: 0.2s ease-in-out;
+  } */
+  /* .songRow:hover .play {
+    
+    
+  } */
+  
+  .headingsRow__info {
+   flex:0.4;
+   min-width: 290px;
+   font-size: 14px;
+   font-family: Quicksand-SemiBold;
+  }
+  .headings_details{
+    flex:0.2;
+    text-align: center;
+    min-width: 70px;
+    white-space: nowrap;
+    font-family:Quicksand-SemiBold;
+    font-size: 14px;
+  }
+  
+  .headingsRow__info > h1 {
+    font-size: 14px;
+    font-family: Quicksand-SemiBold;
+    white-space: nowrap;
+  }
+  
+  .headingsRow__info > p {
+    font-size: 11px;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    color: rgb(204, 204, 204);
+    font-family: Quicksand-SemiBold;
+    white-space: nowrap;
+  }
+  
+  .headingsRow__album {
+    height: 40px;
+    
+  }
+  .headingsRow__album_heading {
+    font-family: Quicksand-SemiBold;
+  }
