@@ -64,6 +64,7 @@ const AlbumDetailed = () => {
             <SongList tracks = {selectedAlbum?.data?.tracks} album_title = {selectedAlbum?.data?.title}
             artist_name = {selectedAlbum?.data?.artists?.map((artist) => artist.name).join(", ")}
             />
+            <div style = {{height:"150px"}}></div>
            
         </div>
     )

@@ -24,6 +24,7 @@ const TimelineAlbums = ({fetched_data}) => {
                                             <SingleContent name = {album.title.split(' ').slice(0,4).join(' ')} 
                                             image = {album.albumArtUrl} 
                                             sub2 = {album.genre}
+                                            id= {album._id}
                                             key= {album._id}/>
                                         )
                                     )
