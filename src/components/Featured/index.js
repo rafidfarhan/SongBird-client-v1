@@ -48,7 +48,11 @@ const Featured = () => {
             
             {
                 currentState.featuredPlaylists?.payload?.data?.slice(0,6).map(playlist=>(
-                    <SingleFeatPlaylist title = {playlist.name} image = {playlist.picture} key ={playlist._id}/>
+                    <SingleFeatPlaylist
+                    title = {playlist.name}
+                    image = {playlist.picture} 
+                    id = {playlist._id} 
+                    key ={playlist._id}/>
                 ))
             }
             

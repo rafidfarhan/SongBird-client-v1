@@ -39,11 +39,17 @@ export const setTimelineAlbums = (albums) =>{
         payload: albums,
     };
 };
+export const setUserLikedSongs = (songs) =>{
+  return {
+      type: ActionTypes.SET_USER_LIKED_SONGS,
+      payload: songs,
+  };
+};
 
-export const setSelectedAlbum = (product) => {
+export const setSelectedAlbum = (album) => {
     return {
       type: ActionTypes.SET_SELECTED_ALBUM,
-      payload: product,
+      payload: album,
     };
   };
   export const removeSelectedAlbum = () => {
@@ -58,3 +64,15 @@ export const setMyPlaylists = (playlist) =>{
         payload: playlist,
     };
 };
+
+export const setSelectedPlaylist = (playlist) => {
+    return {
+      type: ActionTypes.SET_SELECTED_PLAYLIST,
+      payload: playlist,
+    };
+  };
+  export const removeSelectedPlaylist = () => {
+    return {
+      type: ActionTypes.REMOVE_SELECTED_PLAYLIST,
+    };
+  };

@@ -51,6 +51,15 @@ export const timelineAlbumsReducer = (state = {}, {type, payload}) =>{
             return state;
     }
 }
+export const userLikedSongsReducer = (state = {}, {type, payload}) =>{
+    switch (type) {
+        case ActionTypes.SET_USER_LIKED_SONGS:
+            return {...state, payload};
+    
+        default:
+            return state;
+    }
+}
 
 export const selectedAlbumReducer = (state = {}, { type, payload }) => {
     switch (type) {
@@ -62,6 +71,7 @@ export const selectedAlbumReducer = (state = {}, { type, payload }) => {
         return state;
     }
   };
+  
 
 export const ownedPlaylistsReducer = (state = {}, {type, payload}) =>{
     switch (type) {
@@ -71,4 +81,15 @@ export const ownedPlaylistsReducer = (state = {}, {type, payload}) =>{
         default:
             return state;
     }
-}
+};
+
+export const selectedPlaylistReducer = (state = {}, { type, payload }) => {
+    switch (type) {
+      case ActionTypes.SET_SELECTED_PLAYLIST:
+        return { ...state, ...payload };
+      case ActionTypes.REMOVE_SELECTED_PLAYLIST:
+        return {};
+      default:
+        return state;
+    }
+  };

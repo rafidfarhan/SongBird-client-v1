@@ -10,6 +10,7 @@ import MyProfile from '../../pages/MyProfile';
 import Search from '../../pages/Search';
 import LikedSongs from '../../pages/LikedSongs';
 import AlbumDetailed from '../../pages/AlbumDetailed';
+import PlaylistDetailed from '../../pages/PlaylistDetailed';
 
 import './Main.css';
 
@@ -26,6 +27,7 @@ const Main = () => {
                 <Route path ='/profile'><MyProfile/></Route>
                 <Route path ='/search'><Search/></Route>
                 <Route path="/album/:albumId" component={AlbumDetailed} />
+                <Route path="/playlist/:playlistId" component={PlaylistDetailed} />
                 <Route path ='/likedsongs'><LikedSongs/></Route>
                 {/*
                 <Route path ='/search' component = {SearchPage}></Route>
