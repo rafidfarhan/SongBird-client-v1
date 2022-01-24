@@ -7,7 +7,8 @@ import {
     ownedPlaylistsReducer,
     selectedAlbumReducer,
     selectedPlaylistReducer,
-    userLikedSongsReducer
+    userLikedSongsReducer,
+    selectedSongForPlayerReducer
 } from "./Reducers";
 
 const reducers = combineReducers({
@@ -19,5 +20,6 @@ const reducers = combineReducers({
     selectedAlbum: selectedAlbumReducer,
     userOwnedPlaylists :ownedPlaylistsReducer,
     selectedPlaylist: selectedPlaylistReducer,
+    selectedSongForPlayer:selectedSongForPlayerReducer
 });
 export default reducers;

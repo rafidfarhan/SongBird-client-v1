@@ -1,5 +1,12 @@
-import React, {useState} from 'react';
-import {useDispatch } from 'react-redux';
+import React, {useState, useEffect} from 'react';
+
+import axios from 'axios';
+import {useParams} from 'react-router-dom';
+import { useSelector,useDispatch} from 'react-redux';
+
+import { removeSelectedAlbum, setSelectedSongForPlayer } from '../../redux/actions';
+import setAxiosHeaders from '../../utils/setAxiosHeaders'; 
+import {api_base_url} from '../../config/constants'
 
 import "./SingleTrack.css";
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
@@ -28,6 +35,29 @@ const SingleTrack = ({track,added_at,album_title,artist_name,track_no}) => {
     return `${minutes}:${(seconds < 10 ? "0" : "")}${seconds}`;
     
 }
+    const currentState = useSelector((state) => state);
+
+    const getTrack = async () =>{
+        try{
+          setAxiosHeaders(currentState.userData.token);
+          const {data} = await axios.get(`${api_base_url}/tracks/${track._id}`);
+          dispatch(setSelectedSongForPlayer(data));
+        }
+        catch(err){
+          console.log(err.response.data.error);
+        }
+        
+    }
+    // useEffect(() => {
+    //     if (!currentState.userData.token) return
+    //     if (albumId && albumId !== "") {
+    //         setAxiosHeaders(currentState.userData.token);
+    //         getAlbum(albumId);
+    //     }
+    //     return () => {
+    //       dispatch(removeSelectedAlbum());
+    //     };
+    //   }, [currentState.userData.token,albumId]);
 
 
     return (
@@ -43,7 +73,9 @@ const SingleTrack = ({track,added_at,album_title,artist_name,track_no}) => {
           track_no: track_no,
           heart: '',
           options:''
-        })}}>
+        })}}
+        onClick= {getTrack}
+        >
           {/* <PlayArrowRoundedIcon className = "play"/> */}
           {/* <img className="songRow__album" src={track.album.images[0].url} alt={track.name} /> */}
           <div className = "songRow_info_all">

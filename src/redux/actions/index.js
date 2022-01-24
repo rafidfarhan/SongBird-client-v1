@@ -76,3 +76,10 @@ export const setSelectedPlaylist = (playlist) => {
       type: ActionTypes.REMOVE_SELECTED_PLAYLIST,
     };
   };
+
+  export const setSelectedSongForPlayer = (playlist) => {
+    return {
+      type: ActionTypes.SET_SELECTED_SONG_FOR_PLAYER,
+      payload: playlist,
+    };
+  };

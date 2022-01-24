@@ -11,6 +11,7 @@ import { removeSelectedAlbum, setUserLikedSongs } from '../../redux/actions';
 import setAxiosHeaders from '../../utils/setAxiosHeaders'; 
 import {api_base_url} from '../../config/constants'
 
+import { Grid, Slider,LinearProgress } from "@mui/material";
 
 import AlbumTwoToneIcon from '@mui/icons-material/AlbumTwoTone';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
@@ -42,6 +43,7 @@ const LikedSongs = () => {
       }, [currentState.userData.token]);
     return (
         <div className= "home-body">
+            <LinearProgress variant="determinate" value={50} />
             <Header/>
             {/* <Banner type ="album"
             album_art_url={selectedAlbum?.data?.albumArtUrl}

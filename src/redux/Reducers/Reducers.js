@@ -93,3 +93,13 @@ export const selectedPlaylistReducer = (state = {}, { type, payload }) => {
         return state;
     }
   };
+  export const selectedSongForPlayerReducer = (state = {}, { type, payload }) => {
+    switch (type) {
+      case ActionTypes.SET_SELECTED_SONG_FOR_PLAYER:
+        return { ...state, ...payload };
+      case ActionTypes.REMOVE_SELECTED_SONG_FOR_PLAYER:
+        return {};
+      default:
+        return state;
+    }
+  };
