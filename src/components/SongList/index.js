@@ -6,7 +6,7 @@ import SingleTrack from '../SingleTrack';
 
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 
-const SongList = ({heading,tracks, album_title,artist_name}) => {
+const SongList = ({heading,tracks}) => {
   let count =1;
     return (
         <div className="tracks-wrap">
@@ -39,8 +39,8 @@ const SongList = ({heading,tracks, album_title,artist_name}) => {
 
         {tracks?.map((item,index) => (
         <SingleTrack track={item} 
-        album_title ={album_title}
-        artist_name = {artist_name}
+        // album_title ={album_title}
+        // artist_name = {artist_name}
         key = {item._id}
         track_no={index+1}
          />

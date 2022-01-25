@@ -4,6 +4,8 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 
+import likedImage from '../../images/LikedSongs.png';
+
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import SongList from '../../components/SongList';
@@ -43,16 +45,16 @@ const LikedSongs = () => {
       }, [currentState.userData.token]);
     return (
         <div className= "home-body">
-            <LinearProgress variant="determinate" value={50} />
+            {/* <LinearProgress variant="determinate" value={50} /> */}
             <Header/>
-            {/* <Banner type ="album"
-            album_art_url={selectedAlbum?.data?.albumArtUrl}
-            album_title={selectedAlbum?.data?.title}
-            artist_name={selectedAlbum?.data?.artists[0].name}
-            artist_image_url= {selectedAlbum?.data?.artists[0].profileImgUrl}
-            release_date = {selectedAlbum?.data?.releaseDate}
-            song_count = {selectedAlbum?.data?.tracks?.length}
-            /> */}
+            <Banner type ="likedSongs"
+            album_art_url= {`https://firebasestorage.googleapis.com/v0/b/songbird-fed8a.appspot.com/o/Tracks%2FLikedSongs.png?alt=media&token=a2af9ebe-5dd1-41b6-b2b1-94869e3ef612`}
+            album_title= "Liked Songs"
+            artist_name={currentState?.userData?.user?.username}
+            artist_image_url= {`https://songbird-api-v1.herokuapp.com/profilepics/${currentState?.userData?.user?.profilePicture}`}
+            // release_date = {selectedAlbum?.data?.releaseDate}
+            song_count = {likedSongs?.payload?.data.length}
+            />
             <div className = 'album-icons-wrap'>
             <AlbumTwoToneIcon className= 'album-icon'/>
             <FavoriteRoundedIcon className= 'album-heart-icon'/>

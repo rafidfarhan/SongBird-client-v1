@@ -9,6 +9,7 @@ import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import PlayCircleFilledWhiteRoundedIcon from '@mui/icons-material/PlayCircleFilledWhiteRounded';
+import PauseCircleRoundedIcon from '@mui/icons-material/PauseCircleRounded';
 import RepeatRoundedIcon from '@mui/icons-material/RepeatRounded';
 import PlaylistPlayRoundedIcon from '@mui/icons-material/PlaylistPlayRounded';
 import VolumeDownRoundedIcon from '@mui/icons-material/VolumeDownRounded';
@@ -27,7 +28,7 @@ const Player = () => {
     const [duration, setDuration] = useState(0)
     const [currentTime, setCurrentTime] = useState(0)
 
-    const [volume, setVolume] = useState(50)
+    // const [volume, setVolume] = useState(50)
     const [progress,setProgress] = useState(0)
 
     const audioElement = useRef();
@@ -46,9 +47,9 @@ const Player = () => {
             // cancelAnimationFrame(animationRef.current)
         }
     }
-    const whilePlaying = ()=>{
-        setProgress(audioElement.current.currentTime)
-    }
+    // const whilePlaying = ()=>{
+    //     setProgress(audioElement.current.currentTime)
+    // }
     
     // function formatTime(secs) {
     //     const t = new Date(1970, 0, 1);
@@ -68,10 +69,14 @@ const Player = () => {
       }
 
     const changeProgress = (event,value) =>{
-        console.log(progressBar)
+        // console.log(progressBar)
         audioElement.current.currentTime= value;
         setProgress(value)
         setCurrentTime(value);
+    }
+    const changeVolume = (event,value) =>{
+        audioElement.current.volume= value/100;
+        // setVolume(value);
     }
 
     useEffect(()=>{
@@ -96,24 +101,23 @@ const Player = () => {
         <>
         <div className="player">
         <div className="player-left">
-            <img
+            {selectedSong?.data?.album?.albumArtUrl &&<img
             className="player-album-logo"
-            // src= "https://firebasestorage.googleapis.com/v0/b/songbird-fed8a.appspot.com/o/Tracks%2FEd%20Sheeran%20Divide%2FEd%20Sheeran%20-%20%C3%B7%20(Divide)%20(Deluxe)%20(2017).jpg?alt=media&token=3d957df6-2f58-40ce-a5f2-dd66e20e8e30"
             src ={selectedSong?.data?.album.albumArtUrl}
             alt= 'album cover'
-            />
+            />}
             {selectedSong?.data? (
             <div className="footer__songInfo">
                 <h1>{selectedSong?.data?.title}</h1>
                 {/* <p>{selectedSong?.data?.album.artists.map((artist) => artist.name).join(", ")}</p> */}
-                <p>Artist name</p>
+                <p>{selectedSong?.data?.artistName}</p>
             </div>
             ) : (
                 
-            <div className="player-song-info">
-                
-                <h4>Select Song</h4>
-                <p>...</p>
+            <div className="footer__songInfo">
+                <h1>Select a Song</h1>
+                {/* <p>{selectedSong?.data?.album.artists.map((artist) => artist.name).join(", ")}</p> */}
+                <p>Artist name</p>
             </div>
              )}
         </div>
@@ -125,12 +129,19 @@ const Player = () => {
             />
             <SkipPreviousRoundedIcon className="player-skip" />
             <audio ref={audioElement} src={selectedSong?.data?.streamUrl} preload={"metadata"}/>
-            <PlayCircleFilledWhiteRoundedIcon
+            {!isPlaying? (<PlayCircleFilledWhiteRoundedIcon
+                fontSize="large"
+                className="player-player"
+                onClick={togglePlayPause}
+                // onClick= {handlePlayPause}
+            />):(
+                <PauseCircleRoundedIcon
                 fontSize="large"
                 className="player-player"
                 onClick={togglePlayPause}
                 // onClick= {handlePlayPause}
             />
+            )}
             <SkipNextRoundedIcon 
             className="player-skip" />
             <RepeatRoundedIcon 
@@ -148,7 +159,12 @@ const Player = () => {
                     <VolumeDownRoundedIcon/>
                 </Grid>
                 <Grid item xs>
-                    <Slider aria-labelledby="continuous-slider" className ={"volume-slider"}/>
+                    <Slider 
+                    aria-labelledby="continuous-slider" 
+                    defaultValue = {100}
+                    className ={"volume-slider"}
+                    onChange ={changeVolume}
+                    />
                 </Grid>
             </Grid>
             </div>
@@ -164,7 +180,7 @@ const Player = () => {
                  
                  />
             </div>
-            <div className="duration">{calculateTime(currentTime)} out of {(duration && !isNaN(duration)) && calculateTime(duration)}</div>
+            <div className="duration">{calculateTime(currentTime)} out of {(duration && !isNaN(duration))? (calculateTime(duration)):('0:00')}</div>
         
         </div> 
        

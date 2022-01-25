@@ -61,8 +61,7 @@ const AlbumDetailed = () => {
             <FavoriteRoundedIcon className= 'album-heart-icon'/>
             <MoreHorizRoundedIcon className= 'album-more-icon'/>
             </div>
-            <SongList tracks = {selectedAlbum?.data?.tracks} album_title = {selectedAlbum?.data?.title}
-            artist_name = {selectedAlbum?.data?.artists?.map((artist) => artist.name).join(", ")}
+            <SongList tracks = {selectedAlbum?.data?.tracks} 
             />
             <div style = {{height:"150px"}}></div>
            

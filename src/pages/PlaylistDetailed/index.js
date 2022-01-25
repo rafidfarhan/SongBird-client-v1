@@ -51,6 +51,7 @@ const PlaylistDetailed = () => {
             <Banner type ="playlist"
             album_art_url={selectedPlaylist?.data?.picture}
             album_title={selectedPlaylist?.data?.name}
+            artist_name={selectedPlaylist?.data?.owner.username}
             release_date = {selectedPlaylist?.data?.createdAt}
             song_count = {selectedPlaylist?.data?.tracks?.length}
             />
@@ -59,7 +60,7 @@ const PlaylistDetailed = () => {
             <FavoriteRoundedIcon className= 'album-heart-icon'/>
             <MoreHorizRoundedIcon className= 'album-more-icon'/>
             </div>
-            <SongList tracks = {selectedPlaylist?.data?.tracks} album_title = {selectedPlaylist?.data?.name}
+            <SongList tracks = {selectedPlaylist?.data?.tracks}
             />
             <div style = {{height:"150px"}}></div>
            

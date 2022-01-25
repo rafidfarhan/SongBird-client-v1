@@ -41,15 +41,31 @@ const Banner = ({profile_image,
                         </div>
                     </div>
     }
+    if (type==="likedSongs"){
+        component= <div className="banner-info">
+                        <img className ="album_img" src= {album_art_url} alt="album" />
+                        <div className="banner-info-text">
+                        <p className = 'type'>Playlist</p>
+                        <h2>{album_title}</h2>
+                        <div className ='details-txt'><img className ="artist_img" 
+                        src= {artist_image_url} 
+                        alt="album" /><span className = 'artist-name'>{artist_name}</span><span><p>· {song_count} song(s)</p></span></div>
+                        </div>
+                    </div>
+    }
     if (type==="playlist"){
         component= <div className="banner-info">
                         <img className ="album_img" src= {`https://songbird-api-v1.herokuapp.com/playlistpics/${album_art_url}`} alt="playlist" />
                         <div className="banner-info-text">
                         <p className = 'type'>{type}</p>
                         <h2>{album_title}</h2>
-                        <div className ='details-txt'><img className ="artist_img" 
-                        src= {artist_image_url} 
-                        alt="album" /><span className = 'artist-name'>{artist_name}</span><span><p>· Released in {release_date_processed} · {song_count} song(s)</p></span></div>
+                        <div className ='details-txt'>
+                            {artist_image_url && <img className ="artist_img" 
+                            src= {artist_image_url} 
+                            alt="album" />}
+                            <span className = 'artist-name'>{artist_name}</span>
+                            <span><p>· Created at {release_date_processed} · {song_count} song(s)</p></span>
+                        </div>
                         </div>
                     </div>
     }

@@ -19,7 +19,7 @@ import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 
 
 
-const SingleTrack = ({track,added_at,album_title,artist_name,track_no}) => {
+const SingleTrack = ({track,added_at,track_no}) => {
 
   const [hover,setHover]=useState({
     track_no: track_no,
@@ -85,12 +85,12 @@ const SingleTrack = ({track,added_at,album_title,artist_name,track_no}) => {
           <div className="songRow__info">
             <h1>{track.title}</h1>
               <p>
-                {artist_name}
+                {track.artistName}
               </p>
           </div>
            
           </div>
-          <div className = "details">{album_title?.split(" ").slice(0,3).join(' ')}</div>
+          <div className = "details">{track.albumName?.split(" ").slice(0,3).join(' ')}</div>
           {added_at? (
                  <div className = "details">
                     {added_at.slice(0,10)}
