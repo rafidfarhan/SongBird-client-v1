@@ -64,6 +64,24 @@ export const setMyPlaylists = (playlist) =>{
         payload: playlist,
     };
 };
+export const setMySavedPlaylists = (playlist) =>{
+  return {
+      type: ActionTypes.SET_USER_SAVED_PLAYLISTS,
+      payload: playlist,
+  };
+};
+export const setMySavedAlbums = (album) =>{
+  return {
+      type: ActionTypes.SET_USER_SAVED_ALBUMS,
+      payload: album,
+  };
+};
+export const setMyFollowedArtists = (artist) =>{
+  return {
+      type: ActionTypes.SET_USER_FOLLOWED_ARTISTS,
+      payload: artist,
+  };
+};
 
 export const setSelectedPlaylist = (playlist) => {
     return {

@@ -83,6 +83,35 @@ export const ownedPlaylistsReducer = (state = {}, {type, payload}) =>{
     }
 };
 
+export const savedPlaylistsReducer = (state = {}, {type, payload}) =>{
+  switch (type) {
+      case ActionTypes.SET_USER_SAVED_PLAYLISTS:
+          return {...state, payload};
+  
+      default:
+          return state;
+  }
+};
+
+export const savedAlbumsReducer = (state = {}, {type, payload}) =>{
+  switch (type) {
+      case ActionTypes.SET_USER_SAVED_ALBUMS:
+          return {...state, payload};
+  
+      default:
+          return state;
+  }
+};
+export const followedArtistsReducer = (state = {}, {type, payload}) =>{
+  switch (type) {
+      case ActionTypes.SET_USER_FOLLOWED_ARTISTS:
+          return {...state, payload};
+  
+      default:
+          return state;
+  }
+};
+
 export const selectedPlaylistReducer = (state = {}, { type, payload }) => {
     switch (type) {
       case ActionTypes.SET_SELECTED_PLAYLIST:

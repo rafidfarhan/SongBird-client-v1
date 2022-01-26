@@ -15,7 +15,7 @@ import {api_base_url} from '../../config/constants'
 
 import { Grid, Slider,LinearProgress } from "@mui/material";
 
-import AlbumTwoToneIcon from '@mui/icons-material/AlbumTwoTone';
+import PlayCircleFilledWhiteRoundedIcon from '@mui/icons-material/PlayCircleFilledWhiteRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 
@@ -56,9 +56,13 @@ const LikedSongs = () => {
             song_count = {likedSongs?.payload?.data.length}
             />
             <div className = 'album-icons-wrap'>
-            <AlbumTwoToneIcon className= 'album-icon'/>
-            <FavoriteRoundedIcon className= 'album-heart-icon'/>
-            <MoreHorizRoundedIcon className= 'album-more-icon'/>
+            <PlayCircleFilledWhiteRoundedIcon
+                className= 'album-icon'
+                // onClick={togglePlayPause}
+                // onClick= {handlePlayPause}
+            />
+            {/* <FavoriteRoundedIcon className= 'album-heart-icon'/>
+            <MoreHorizRoundedIcon className= 'album-more-icon'/> */}
             </div>
             <SongList tracks = {likedSongs?.payload?.data} album_title = {"Liked Songs"}
             artist_name = {likedSongs?.payload?.data?.artists?.map((artist) => artist.name).join(", ")}

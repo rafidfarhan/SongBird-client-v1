@@ -1,0 +1,18 @@
+.library-playlists-wrap{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.library-playlists{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
+.library-playlists::-webkit-scrollbar {
+    display: none;
+  }
+
+h3{
+    font-family:Maler;
+}

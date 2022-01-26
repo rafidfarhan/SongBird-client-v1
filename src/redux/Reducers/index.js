@@ -5,6 +5,9 @@ import {
     newReleasesReducer,
     timelineAlbumsReducer,
     ownedPlaylistsReducer,
+    savedPlaylistsReducer,
+    savedAlbumsReducer,
+    followedArtistsReducer,
     selectedAlbumReducer,
     selectedPlaylistReducer,
     userLikedSongsReducer,
@@ -19,6 +22,9 @@ const reducers = combineReducers({
     likedSongs:userLikedSongsReducer,
     selectedAlbum: selectedAlbumReducer,
     userOwnedPlaylists :ownedPlaylistsReducer,
+    userSavedPlaylists :savedPlaylistsReducer,
+    userSavedAlbums: savedAlbumsReducer,
+    userFollowedArtists: followedArtistsReducer,
     selectedPlaylist: selectedPlaylistReducer,
     selectedSongForPlayer:selectedSongForPlayerReducer
 });
