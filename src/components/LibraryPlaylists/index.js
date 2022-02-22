@@ -21,9 +21,11 @@ const LibraryPlaylists = ({fetched_data}) => {
                                 playlist =>(
                                     <SingleRelease name = {playlist.name.split(' ').slice(0,4).join(' ')} 
                                     image = {`https://songbird-api-v1.herokuapp.com/playlistpics/${playlist.picture}`}
-                                    sub = {playlist.owner.username}
+                                    sub2 = {`by ${playlist.owner.username}`}
                                     id = {playlist._id}
-                                    key= {playlist._id}/>
+                                    key= {playlist._id}
+                                    contentType ={'playlist'}
+                                    />
                                 )
                             )}
                             

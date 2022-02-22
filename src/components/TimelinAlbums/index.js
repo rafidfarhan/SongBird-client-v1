@@ -25,7 +25,9 @@ const TimelineAlbums = ({fetched_data}) => {
                                             image = {album.albumArtUrl} 
                                             sub2 = {album.genre}
                                             id= {album._id}
-                                            key= {album._id}/>
+                                            key= {album._id}
+                                            contentType ={'album'}
+                                            />
                                         )
                                     )
                                  )

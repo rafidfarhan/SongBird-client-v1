@@ -2,7 +2,7 @@ import React from 'react';
 import "./SingleContent.css";
 import {Link} from 'react-router-dom'
 
-const SingleContent = ({name,image,sub,sub2,id}) => {
+const SingleContent = ({name,image,sub,sub2,id,contentType}) => {
     let subtitle = "Artist";
     if(sub) subtitle = sub[0].name;
     if(sub2) subtitle = sub2;
@@ -19,7 +19,7 @@ const SingleContent = ({name,image,sub,sub2,id}) => {
     return (
       
         <div className = "content-card" >
-              <Link to ={`/album/${id}`} style= {{color:'white'}}>
+              <Link to ={`/${contentType}/${id}`} style= {{color:'white'}}>
             <div className = "image-wrap">
                 <img src = {image} alt = {`${name} cover`}/>
             </div>

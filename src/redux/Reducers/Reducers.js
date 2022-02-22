@@ -112,6 +112,26 @@ export const followedArtistsReducer = (state = {}, {type, payload}) =>{
   }
 };
 
+export const searchedArtistsReducer = (state = {}, {type, payload}) =>{
+  switch (type) {
+      case ActionTypes.SET_SEARCHED_ARTISTS:
+          return {...state, payload};
+  
+      default:
+          return state;
+  }
+};
+
+export const searchTermReducer = (state = '', {type, payload}) =>{
+  switch (type) {
+      case ActionTypes.SET_SEARCH_TERM:
+          return {...state, payload};
+  
+      default:
+          return state;
+  }
+};
+
 export const selectedPlaylistReducer = (state = {}, { type, payload }) => {
     switch (type) {
       case ActionTypes.SET_SELECTED_PLAYLIST:

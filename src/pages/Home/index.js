@@ -54,7 +54,7 @@ const Home = () => {
         <div className = "home-body">
             <Header/>
             <Featured/>
-            <NewReleases fetched_data = {newReleases}/>
+            <NewReleases fetched_data = {newReleases} heading ={'New Releases'}/>
             <TimelineAlbums fetched_data = {timelineAlbums}/>
             <div style = {{height:"150px"}}></div>
         </div>

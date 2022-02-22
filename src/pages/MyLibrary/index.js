@@ -9,6 +9,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import Header from '../../components/Header';
 import NewReleases from '../../components/NewReleases';
 import LibraryPlaylists from '../../components/LibraryPlaylists';
+import LibraryArtists from '../../components/LibraryArtists';
 
 import { 
     setMyPlaylists,
@@ -21,12 +22,15 @@ import {
 
 const MyLibrary = () => {
 
-  const [contentType,setContentType] = useState('playlists');
+  // const [contentType,setContentType] = useState('artists');
 
     const userData = useSelector((state) => state.userData);
     const ownedPlaylists = useSelector((state) => state.userOwnedPlaylists);
     const savedPlaylists = useSelector((state) => state.userSavedPlaylists);
-    const savedAlbums = useSelector((state) => state.userSavedAlbums.payload);
+    const savedAlbums = useSelector((state) => state.userSavedAlbums);
+    const followedArtists = useSelector((state) => state.userFollowedArtists);
+
+    const dispatch = useDispatch();
 
     const ownedPlaylistsArray = ownedPlaylists?.payload?.data;
     const savedPlaylistsArray = savedPlaylists?.payload?.data;
@@ -36,7 +40,7 @@ const MyLibrary = () => {
         playlists = [...ownedPlaylistsArray,...savedPlaylistsArray]
     }
     
-    const dispatch = useDispatch();
+    
     const getOwnedPlaylists = async () =>{
         try{
           const {data} = await axios.get(`${api_base_url}/playlists/myplaylists`);
@@ -81,16 +85,19 @@ const getFollowedArtists = async () =>{
     useEffect(()=>{
         if (!userData.token) return
         setAxiosHeaders(userData.token);
-        if(contentType === 'playlists'){
-          getOwnedPlaylists();
-          getSavedPlaylists();
-        }
-        if(contentType === 'albums'){
-          getSavedAlbums();
-        }
-        if(contentType === 'artists'){
-          getFollowedArtists();
-        }
+        getOwnedPlaylists();
+        getSavedPlaylists();
+        getSavedAlbums();
+        getFollowedArtists();
+        // if(contentType === 'playlists'){
+          
+        // }
+        // if(contentType === 'albums'){
+         
+        // }
+        // if(contentType === 'artists'){
+          
+        // }
         
     },[userData.token]);
 
@@ -98,7 +105,9 @@ const getFollowedArtists = async () =>{
         <div className ='lib_body'>
             <Header/>
             <LibraryPlaylists fetched_data = {playlists}/>
-            {/* <NewReleases fetched_data = {savedAlbums}/> */}
+            <NewReleases fetched_data = {savedAlbums?.payload} heading= {'Saved Albums'}/>
+            <LibraryArtists fetched_data = {followedArtists?.payload?.data}/>
+            <div style = {{height:"150px"}}></div>
         </div>
     )
 }

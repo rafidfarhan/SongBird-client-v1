@@ -8,6 +8,8 @@ import {
     savedPlaylistsReducer,
     savedAlbumsReducer,
     followedArtistsReducer,
+    searchedArtistsReducer,
+    searchTermReducer,
     selectedAlbumReducer,
     selectedPlaylistReducer,
     userLikedSongsReducer,
@@ -25,6 +27,8 @@ const reducers = combineReducers({
     userSavedPlaylists :savedPlaylistsReducer,
     userSavedAlbums: savedAlbumsReducer,
     userFollowedArtists: followedArtistsReducer,
+    searchedArtists: searchedArtistsReducer,
+    searchTerm: searchTermReducer,
     selectedPlaylist: selectedPlaylistReducer,
     selectedSongForPlayer:selectedSongForPlayerReducer
 });

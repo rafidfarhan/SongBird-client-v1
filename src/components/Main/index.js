@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
 
 import Sidebar from '../Sidebar';
@@ -10,11 +10,13 @@ import MyProfile from '../../pages/MyProfile';
 import Search from '../../pages/Search';
 import LikedSongs from '../../pages/LikedSongs';
 import AlbumDetailed from '../../pages/AlbumDetailed';
+import ArtistDetailed from '../../pages/ArtistDetailed';
 import PlaylistDetailed from '../../pages/PlaylistDetailed';
 
 import './Main.css';
 
 const Main = () => {
+
     return (
         <div className="main">
         <div className ="main-body">
@@ -28,6 +30,7 @@ const Main = () => {
                 <Route path ='/search'><Search/></Route>
                 <Route path="/album/:albumId" component={AlbumDetailed} />
                 <Route path="/playlist/:playlistId" component={PlaylistDetailed} />
+                <Route path="/artist/:artistId" component={ArtistDetailed} />
                 <Route path ='/likedsongs'><LikedSongs/></Route>
                 {/*
                 <Route path ='/search' component = {SearchPage}></Route>

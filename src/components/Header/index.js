@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 import "./Header.css";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Chip} from "@material-ui/core";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import HelpCenterRoundedIcon from '@mui/icons-material/HelpCenterRounded';
@@ -22,6 +22,10 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+
+import { 
+  setSearchedTerm
+} from "../../redux/actions";
 
 const useStyles = makeStyles({
     customChip: {
@@ -58,6 +62,9 @@ const useStyles = makeStyles({
     const classes = useStyles();
     const user = useSelector((state) => state.userData.user);
 
+    const dispatch = useDispatch();
+    
+
   
     const history = useHistory();
   
@@ -83,7 +90,7 @@ const useStyles = makeStyles({
             placeholder="Search for Artists, Songs, or Albums "
             type="text"
             // onClick = {handleRoute}
-            // onChange = {e => setSearchTerm(e.target.value)}
+            onChange = {e => dispatch(setSearchedTerm(e.target.value))}
           />
         </div>
         <div className="header__right">

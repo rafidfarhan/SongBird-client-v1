@@ -58,28 +58,40 @@ export const setSelectedAlbum = (album) => {
     };
   };
 
-export const setMyPlaylists = (playlist) =>{
+export const setMyPlaylists = (playlists) =>{
     return {
         type: ActionTypes.SET_USER_OWNED_PLAYLISTS,
-        payload: playlist,
+        payload: playlists,
     };
 };
-export const setMySavedPlaylists = (playlist) =>{
+export const setMySavedPlaylists = (playlists) =>{
   return {
       type: ActionTypes.SET_USER_SAVED_PLAYLISTS,
-      payload: playlist,
+      payload: playlists,
   };
 };
-export const setMySavedAlbums = (album) =>{
+export const setMySavedAlbums = (albums) =>{
   return {
       type: ActionTypes.SET_USER_SAVED_ALBUMS,
-      payload: album,
+      payload: albums,
   };
 };
-export const setMyFollowedArtists = (artist) =>{
+export const setMyFollowedArtists = (artists) =>{
   return {
       type: ActionTypes.SET_USER_FOLLOWED_ARTISTS,
-      payload: artist,
+      payload: artists,
+  };
+};
+export const setSearchedArtists = (artists) =>{
+  return {
+      type: ActionTypes.SET_SEARCHED_ARTISTS,
+      payload: artists,
+  };
+};
+export const setSearchedTerm = (term) =>{
+  return {
+      type: ActionTypes.SET_SEARCH_TERM,
+      payload: term,
   };
 };
 
